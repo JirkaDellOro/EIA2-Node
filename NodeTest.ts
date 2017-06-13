@@ -1,6 +1,23 @@
-console.log("Hallo");
-process.addListener("beforeExit", sayBye);
+console.log("Server starting");
 
-function sayBye(): void {
-    console.log("Good bye");
+import Http = require("http");
+
+let port: number = process.env.PORT;
+if (port == undefined)
+    port = 8100;
+
+let server: Http.Server = Http.createServer();
+server.addListener("listening", handleListen);
+server.addListener("request", handleRequest);
+server.listen(port);
+
+function handleListen(): void {
+    console.log("Listening on port: " + port);
+}
+
+function handleRequest(_request: Http.IncomingMessage, _response: Http.ServerResponse): void {
+    console.log("Request received");
+    _response.setHeader("content-type", "text/html; charset=utf-8");
+    _response.write("Ich höre Stimmen!");
+    _response.end();
 }
