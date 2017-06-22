@@ -1,11 +1,11 @@
 {
-	"name" : "NodeTest",
+	"name" : "Database Access",
 	"version" : "0.0.1",
-	"description" : "first node test",
+	"description" : "simple database find/insert example",
 	"author" : "Jirka Dell'Oro-Friedl'",
-	"main" : "NodeTest.js",
+	"main" : "Server.js",
 	"scripts" : {
-		"start" : "node NodeTest.js"
+		"start" : "node Server.js"
 	},
 	"engines" : {
 		"node" : "6.10.3"
