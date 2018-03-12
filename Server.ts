@@ -3,9 +3,9 @@
  * @author: Jirka Dell'Oro-Friedl
  */
 
-import Http = require("http");
-import Url = require("url");
-import Database = require("./Database");
+import * as Http from "http";
+import * as Url from "url";
+import * as Database from "./Database";
 
 console.log("Server starting");
 

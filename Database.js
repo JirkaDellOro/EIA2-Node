@@ -33,7 +33,7 @@ function findAll(_callback) {
     cursor.toArray(prepareAnswer);
     function prepareAnswer(_e, studentArray) {
         if (_e)
-            _callback("Error" + _e);
+            _callback({ "Error": _e });
         else
             _callback(JSON.stringify(studentArray));
     }

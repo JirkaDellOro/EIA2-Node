@@ -40,7 +40,7 @@ export function findAll(_callback: Function): void {
 
     function prepareAnswer(_e: Mongo.MongoError, studentArray: StudentData[]): void {
         if (_e)
-            _callback("Error" + _e);
+            _callback({"Error": _e});
         else
             _callback(JSON.stringify(studentArray));
     }
